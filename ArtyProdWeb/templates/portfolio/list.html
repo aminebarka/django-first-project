@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Portfolio</h1>
+    {% for project in projects %}
+        <div class="card my-3">
+            <div class="card-header">
+                <h3>{{ project.title }}</h3>
+            </div>
+            <div class="card-body">
+                <p>{{ project.description }}</p>
+                <a href="{% url 'portfolio_detail' project.pk %}" class="btn btn-primary">Voir les détails</a>
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}

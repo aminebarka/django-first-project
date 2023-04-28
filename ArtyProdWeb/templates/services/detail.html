@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{{ service.title }}</h1>
+    <p>{{ service.description }}</p>
+    <h2>Projets associés</h2>
+    {% if service.projects.all %}
+        <ul>
+            {% for project in service.projects.all %}
+                <li>{{ project.title }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>Aucun projet n'est associé à ce service.</p>
+    {% endif %}
+{% endblock %}

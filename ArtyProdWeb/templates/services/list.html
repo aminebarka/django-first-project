@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Services</h1>
+    {% for service in services %}
+        <div class="card my-3">
+            <div class="card-header">
+                <h3>{{ service.title }}</h3>
+            </div>
+            <div class="card-body">
+                <p>{{ service.description }}</p>
+                <a href="{% url 'services_detail' service.pk %}" class="btn btn-primary">Voir les détails</a>
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}
